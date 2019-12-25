@@ -93,7 +93,7 @@ public extension YoutubePlayerViewDelegate {
 open class YoutubePlayerView: UIView {
     @IBInspectable var allowsInlinePlayback: Bool = true {
       didSet {
-        webView.configuration = configuration
+        configuration.allowsInlineMediaPlayback = allowsInlinePlayback
       }
     }
   
