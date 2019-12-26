@@ -91,12 +91,6 @@ public extension YoutubePlayerViewDelegate {
 }
 
 open class YoutubePlayerView: UIView {
-    @IBInspectable var allowsInlinePlayback: Bool = true {
-      didSet {
-        configuration.allowsInlineMediaPlayback = allowsInlinePlayback
-      }
-    }
-  
     private var webView: WKWebView!
     fileprivate weak var loadingView: UIView?
     private var autoplay = false
@@ -116,7 +110,7 @@ open class YoutubePlayerView: UIView {
             webConfiguration.requiresUserActionForMediaPlayback = false
         }
         
-        webConfiguration.allowsInlineMediaPlayback = allowsInlinePlayback
+        webConfiguration.allowsInlineMediaPlayback = false
         return webConfiguration
     }
     
